@@ -1,19 +1,45 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-navigation-drawer app>
+      <!-- -->
+    </v-navigation-drawer>
+
+    <v-app-bar app>
+      <!-- -->
+    </v-app-bar>
+
+    <!-- Sizes your content based upon application components -->
+    <v-main>
+      <!-- Provides the application the proper gutter -->
+      <v-container fluid>
+        <!-- If using vue-router -->
+        <chip color="blue" />
+        <router-view></router-view>
+      </v-container>
+    </v-main>
+
+    <v-footer app>
+      <!-- -->
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Chip from "./stories/Chip.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Chip,
+  },
+  data() {
+    return {
+      chip1: true,
+      chip2: true,
+      chip3: true,
+      chip4: true,
+    };
+  },
+};
 </script>
 
 <style>
